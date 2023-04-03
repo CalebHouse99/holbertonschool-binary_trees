@@ -1,5 +1,6 @@
 #include <limits.h>
 #include "binary_trees.h"
+#include <stddef.h>
 
 int is_bst_helper(const binary_tree_t *tree, int min, int max)
 {
