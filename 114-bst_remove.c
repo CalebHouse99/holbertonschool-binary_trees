@@ -1,6 +1,6 @@
-#include "binary_trees.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include "binary_trees.h"
 
 /**
  * inorder_successor - finds the inorder successor of a given node
@@ -29,12 +29,30 @@ bst_t *remove_node(bst_t *root, bst_t *node)
 	if (!node->left)
 	{
 		temp = node->right;
+		if (node->parent)
+		{
+			if (node->parent->left == node)
+				node->parent->left = temp;
+			else
+				node->parent->right = temp;
+		}
+		if (temp)
+			temp->parent = node->parent;
 		free(node);
 		return (temp);
 	}
 	else if (!node->right)
 	{
 		temp = node->left;
+		if (node->parent)
+		{
+			if (node->parent->left == node)
+				node->parent->left = temp;
+			else
+				node->parent->right = temp;
+		}
+		if (temp)
+			temp->parent = node->parent;
 		free(node);
 		return (temp);
 	}
