@@ -1,5 +1,6 @@
 #include "binary_trees.h"
 #include <stddef.h>
+#include <stdlib.h>
 
 /**
  * inorder_successor - finds the inorder successor of a given node
