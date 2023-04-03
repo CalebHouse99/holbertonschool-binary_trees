@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include "binary_trees.h"
 
 typedef struct binary_tree_s
 {
